@@ -1,0 +1,9 @@
+[nodes]
+almec.ashkmb.com ansible_host=ubnt0
+omega.ashkmb.com ansible_host=roky0 ansbile_user=vagrant
+vanth.ashkmb.com ansible_host=fdra0
+zanth.ashkmb.com ansible_host=dbin0
+[all:children]
+
+
+[all:vars]

@@ -1,0 +1,9 @@
+roles/common
+.vault_password
+test*
+*.log
+debug.yml
+.vagrant
+.vscode
+.venv
+venv

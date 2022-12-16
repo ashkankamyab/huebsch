@@ -1,0 +1,54 @@
+---
+- name: remove docker packages
+  ansible.builtin.apt:
+    name: 
+    - docker 
+    - docker-engine
+    - docker.io
+    - containerd
+    - runc
+    state: absent
+  when: ansible_facts['os_family'] == 'Debian'
+  become: true
+  tags:
+    - apt
+    - pkg
+
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: true
+  when: ansible_facts['os_family'] == 'Debian'
+  become: true
+  tags:
+    - apt
+    - pkg
+
+- name: Required apt-get system packages
+  ansible.builtin.apt:
+    name:
+      - nginx
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
+      - uidmap
+  when: ansible_facts['os_family'] == 'Debian'
+  become: true
+  tags:
+    - apt
+    - pkg
+    - nginx
+    - apps
+
+- name: Setup Docker
+  ansible.builtin.shell: |
+    curl https://releases.rancher.com/install-docker/20.10.sh | sh
+    dockerd-rootless-setuptool.sh install
+  when: ansible_facts['os_family'] == 'Debian'
+  become: true
+  tags:
+    - apt
+    - pkg
+    - docker
+    - apps
+...

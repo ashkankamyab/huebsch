@@ -1,0 +1,39 @@
+Host ubnt0
+    HostName 192.168.56.11
+    User vagrant
+    IdentityFile ~/.ssh/id_rsa
+    ForwardAgent yes
+    ServerAliveInterval 300
+    ServerAliveCountMax 2
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+
+Host roky0
+    HostName 192.168.56.21
+    User vagrant
+    IdentityFile ~/.ssh/id_rsa
+    ForwardAgent yes
+    ServerAliveInterval 300
+    ServerAliveCountMax 2
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+
+Host fdra0
+    HostName 192.168.56.31
+    User vagrant
+    IdentityFile ~/.ssh/id_rsa
+    ForwardAgent yes
+    ServerAliveInterval 300
+    ServerAliveCountMax 2
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+
+Host dbin0
+    HostName 192.168.56.41
+    User vagrant
+    IdentityFile ~/.ssh/id_rsa
+    ForwardAgent yes
+    ServerAliveInterval 300
+    ServerAliveCountMax 2
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null

@@ -1,0 +1,81 @@
+---
+apt_packages:
+  - git
+  - wget
+  - curl
+  - vim
+  - vlc
+  - tmux
+  - screen
+  - tree
+  - jcal
+  - zsh
+  - fonts-powerline
+  - fonts-inconsolata
+  - ifstat
+  - dstat
+  - iptraf
+  - iotop
+  - lsof
+  - cowsay
+  - mosh
+  - hping3
+  - fping
+  - nmap
+  - net-tools
+  - whois
+  - dsniff
+  - iproute2
+  - iptables
+  - util-linux
+  - gnupg-agent
+  - apt-transport-https
+  - ca-certificates
+  - software-properties-common
+  - sysstat
+
+dnf_packages:
+  - git
+  - curl
+  - wget
+  - vim
+  - tmux
+  - screen
+  - htop
+  - zsh
+  - powerline-fonts
+  - iptraf-ng
+  - iotop
+  - cowsay
+  - dsniff
+  - mosh
+  - fping
+  - nmap
+  - procps
+  - net-tools
+  - whois
+  - dnsmasq
+  - iptables
+  - sysstat
+  - util-linux
+  - ca-certificates
+  - gnupg2
+
+apt_programming_packages:
+  - python3-dev
+  - ipython3
+  - build-essential
+  - openjdk-17-jdk
+  - openjdk-17-source
+  - openjdk-17-jre
+  - openjdk-17-demo
+  - openjdk-17-doc
+  - openjdk-17-jre-headless
+  - golang-go
+
+dnf_programming_packages:
+  - '@Development tools'
+  - java-17-openjdk
+  - java-17-openjdk-devel
+  - golang
+...

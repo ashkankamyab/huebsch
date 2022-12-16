@@ -1,0 +1,8 @@
+[nodes]
+almec.ashkmb.com ansible_host=ashweb
+omega.ashkmb.com ansible_host=ashons
+vanth.ashkmb.com ansible_host=ashovh
+[all:children]
+
+
+[all:vars]

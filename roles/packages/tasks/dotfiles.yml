@@ -1,0 +1,30 @@
+---
+- name: Copy Dot File to Home Directory
+  ansible.builtin.copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: '0644'
+    backup: true
+  with_items:
+    - { src: "bashrc", dest: "{{ ansible_user_dir }}/.bashrc" }
+    - { src: "bash_functions", dest: "{{ ansible_user_dir }}/.bash_functions" }
+    - { src: "tmux.conf", dest: "{{ ansible_user_dir }}/.tmux.conf" }
+    - { src: "tmux.conf.local", dest: "{{ ansible_user_dir }}/.tmux.conf.local" }
+    - { src: "vimrc", dest: "{{ ansible_user_dir }}/.vimrc" }
+  tags:
+    - dotfile
+
+- name: Copy bash aliases based on Dirstribution
+  ansible.builtin.template:
+    src: bash_aliases.j2
+    dest: "{{ ansible_user_dir }}/.bash_aliases"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: 0644
+    backup: true
+  tags:
+    - dotfile
+
+...
