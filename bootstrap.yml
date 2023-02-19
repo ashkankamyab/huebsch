@@ -11,13 +11,21 @@
       - hostname
     become: true
 
-  - name: Import the Packages role
+  - name: Install packages
     ansible.builtin.include_role:
       name: packages
     ignore_errors: true
     register: ignore_errors_register
 
-- name: Debug hosts
-  hosts: omega.ashkmb.com
-  gather_facts: true
+  - name: sudoers
+    ansible.builtin.include_role:
+      name: sudoers
+    ignore_errors: true
+    register: ignore_errors_register
+  
+  - name: User Management
+    ansible.builtin.include_role:
+      name: user_mgmt
+    ignore_errors: true
+    register: ignore_errors_register
 ...

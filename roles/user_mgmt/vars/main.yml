@@ -1,0 +1,12 @@
+users:
+  - name: ashkan
+    uid: 1001
+    comment: "Alice Smith"
+    group: admin
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzevwcJuzSdK9KGX/3pEgTKhL1oQaUwITUYjnERJzYmEHqe43TOySRnNDYRUAqtZhpZmkt2D5pSzTwImTK+ma5MkUFZqlqd7XgsOWf+5IAunTVBXV6MqaPC1YFIPGITXK9/9iZH0NSpDHK8o7SbNhf+CLvOPqPwF3fhvrbj8Ls5UlV1Xb5ME24hlJ6NlmZKw/0fcmU5xiECyQto+fPYf8PhMm4eDCsy9b96RYsphXNzMKpA77G1wqIOenYr8/zFqyGc3A52srgK7eOYnNnQATxqEp/Ezex7gdplsRHkjw71AoXbrdT3sFUNlhkqpB1dAZdbNGNWpYt0v5yOtDU57ev"
+    state: present
+  - name: ansible
+    uid: 1002
+    comment: "Bob Jones"
+    group: admin
+    state: absent
