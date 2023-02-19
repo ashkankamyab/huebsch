@@ -1,0 +1,14 @@
+- name: Ensure admin group exists
+  group:
+    name: admin
+    state: present
+
+- name: Add admin group to sudoers
+  lineinfile:
+    path: /etc/sudoers
+    line: '%admin ALL=(ALL) NOPASSWD: ALL'
+    state: present
+    validate: 'visudo -cf %s'
+
+- name: Reload sudo configuration
+  command: 'sudo /usr/sbin/visudo -c'

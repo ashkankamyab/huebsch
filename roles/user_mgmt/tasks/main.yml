@@ -1,0 +1,26 @@
+---
+- name: Add users
+  user:
+    name: "{{ item.name }}"
+    uid: "{{ item.uid }}"
+    comment: "{{ item.comment }}"
+    group: "{{ item.group }}"
+  with_items: "{{ users }}"
+  when: item.state == 'present'
+
+- name: Remove users
+  user:
+    name: "{{ item.name }}"
+    state: absent
+  with_items: "{{ users }}"
+  when: item.state == 'absent'
+
+- name: Set up multiple authorized keys
+  ansible.posix.authorized_key:
+    user: "{{ item.name }}"
+    state: present
+    key: '{{ item.ssh_key }}'
+  with_item:
+    - "{{ users }}"
+  when: item.state == 'present'
+...
